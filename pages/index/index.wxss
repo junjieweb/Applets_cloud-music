@@ -43,24 +43,6 @@
     padding: 20rpx;
 }
 
-.recommendContainer .header {
-    padding-bottom: 20rpx;
-}
-
-.recommendContainer .header .title {
-    font-size: 32rpx;
-    line-height: 80rpx;
-    color: #666;
-}
-
-.recommendContainer .header .more {
-    float: right;
-    border: 1rpx solid #333;
-    padding: 10rpx 20rpx;
-    font-size: 24rpx;
-    border-radius: 30rpx;
-}
-
 /* 推荐内容区 */
 .recommendScroll {
     display: flex;
@@ -93,4 +75,9 @@
     -webkit-box-orient: vertical;
     /* 设置多行的行数 */
     -webkit-line-clamp: 2;
+}
+
+/* 排行榜区域 */
+.topList{
+    padding: 20rpx;
 }

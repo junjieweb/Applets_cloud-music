@@ -14,9 +14,15 @@ Page({
      * 生命周期函数--监听页面加载
      */
     onLoad: async function (options) {
+        // 获取轮播图数据
         let bannerListData = await request('/banner', { type: 1 })
         this.setData({
             bannerList: bannerListData.banners
+        })
+        // 获取推荐歌单数据
+        let recommendListData = await request('/personalized', { limit: 10 })
+        this.setData({
+            recommendList: recommendListData.result
         })
     },
 
