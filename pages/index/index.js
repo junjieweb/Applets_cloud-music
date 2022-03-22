@@ -24,6 +24,24 @@ Page({
         this.setData({
             recommendList: recommendListData.result
         })
+        // 获取排行榜数据
+        /**
+         * 需求分析：
+         *  1. 需要根据idx的值获取对应的数据
+         *  2. idx的取值范围是0-20，我们需要0-4
+         *  3. 需要发送5次请求
+         */
+        let index = 0
+        let resultArr = []
+        while (index < 5) {
+            let topListData = await request('/top/list', { idx: index++ })
+            let topListItem = { name: topListData.playlist.name, tracks: topListData.playlist.tracks.slice(0, 3) }
+            resultArr.push(topListItem)
+        }
+        // 更新topList的状态值
+        this.setData({
+            topList: resultArr
+        })
     },
 
     /**
