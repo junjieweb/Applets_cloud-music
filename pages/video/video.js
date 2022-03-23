@@ -35,7 +35,8 @@ Page({
             return
         }
         let videoListData = await request('/video/group', { id: navId })
-        console.log(videoListData)
+        // 关闭消息提示框
+        wx.hideLoading()
         let index = 0
         let videoList = videoListData.datas.map(item => {
             item.id = index++
@@ -50,8 +51,15 @@ Page({
         let navId = event.currentTarget.id; // 通过id向event传参的时候如果传的是number会自动转换成string
         // let navId = event.currentTarget.dataset.id;
         this.setData({
-            navId: navId >>> 0
+            navId: navId >>> 0,
+            videoList: []
         })
+        // 显示正在加载
+        wx.showLoading({
+            title: '加载中',
+        })
+        // 动态获取当前导航对应的视频数据
+        this.getVideoList(this.data.navId)
     },
 
     /**
