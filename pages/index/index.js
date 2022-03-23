@@ -37,11 +37,15 @@ Page({
             let topListData = await request('/top/list', { idx: index++ })
             let topListItem = { name: topListData.playlist.name, tracks: topListData.playlist.tracks.slice(0, 3) }
             resultArr.push(topListItem)
+            // 不需要等待5次请求全部结束才更新，用户体验较好，但是渲染次数会多一些
+            this.setData({
+                topList: resultArr
+            })
         }
-        // 更新topList的状态值
-        this.setData({
-            topList: resultArr
-        })
+        // 更新topList的状态值，此处更新会导致发送请求的过程中页面长时间白屏，用户体验差
+        // this.setData({
+        //     topList: resultArr
+        // })
     },
 
     /**
