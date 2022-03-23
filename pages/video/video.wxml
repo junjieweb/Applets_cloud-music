@@ -17,7 +17,7 @@
     <!-- 视频列表区域 -->
     <scroll-view scroll-y class="videoScroll">
         <view class="videoItem" wx:for="{{videoList}}" wx:key="id">
-            <video object-fit="fill" autoplay wx:if="{{videoId === item.data.vid}}" id="{{item.data.vid}}" src="{{item.data.urlInfo.url}}" bindplay="handlePlay" poster="{{item.data.coverUrl}}" class="common"></video>
+            <video object-fit="fill" autoplay wx:if="{{videoId === item.data.vid}}" id="{{item.data.vid}}" src="{{item.data.urlInfo.url}}" bindplay="handlePlay" poster="{{item.data.coverUrl}}" class="common" bindtimeupdate="handleTimeUpdate" bindended="handleEnded"></video>
             <!-- 性能优化，使用image标签代替video标签 -->
             <image wx:else id="{{item.data.vid}}" bindtap="handlePlay" src="{{item.data.coverUrl}}" class="common"></image>
             <view class="content">{{item.data.title}}</view>
