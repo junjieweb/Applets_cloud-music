@@ -8,4 +8,23 @@
             <text class="month">{{month}}</text>
         </view>
     </view>
+    <!-- 列表区域 -->
+    <view class="listContainer">
+        <!-- 头部 -->
+        <view class="listHeader">
+            <text>播放全部</text>
+            <text class="changeMore">多选</text>
+        </view>
+        <!-- 内容区 -->
+        <scroll-view scroll-y class="listScroll">
+            <view class="scrollItem">
+                <image src="/static/images/nvsheng.jpg"></image>
+                <view class="musicInfo">
+                    <text class="musicName">音乐名</text>
+                    <text class="author">作者</text>
+                </view>
+                <text class="iconfont icon-gengduo"></text>
+            </view>
+        </scroll-view>
+    </view>
 </view>
