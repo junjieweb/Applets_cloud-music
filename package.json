@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/junjieweb/Applets_cloud-music/issues"
   },
-  "homepage": "https://github.com/junjieweb/Applets_cloud-music#readme"
+  "homepage": "https://github.com/junjieweb/Applets_cloud-music#readme",
+  "dependencies": {
+    "pubsub-js": "^1.9.4"
+  }
 }
