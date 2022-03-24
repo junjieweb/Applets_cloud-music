@@ -64,29 +64,29 @@ Page({
         })
         // 将搜索的关键字添加到搜索历史记录中
         if (historyList.indexOf(searchContent) !== -1) {
-            historyList.splice(historyList.indexOf(searchContent), 1);
+            historyList.splice(historyList.indexOf(searchContent), 1)
         }
         historyList.unshift(searchContent);
         this.setData({
-            historyList,
+            historyList
         });
-        wx.setStorageSync("searchHistory", historyList);
+        wx.setStorageSync("searchHistory", historyList)
     },
     // 获取本地历史记录的功能函数
     getSearchHistory() {
         let historyList = wx.getStorageSync("searchHistory");
         if (historyList) {
             this.setData({
-                historyList,
-            });
+                historyList
+            })
         }
     },
     // 清空搜索内容
     clearSearchContent() {
         this.setData({
             searchContent: "",
-            searchList: [],
-        });
+            searchList: []
+        })
     },
 
     // 删除搜索历史记录
@@ -97,13 +97,13 @@ Page({
                 if (res.confirm) {
                     // 清空data中historyList
                     this.setData({
-                        historyList: [],
+                        historyList: []
                     });
                     // 移除本地的历史记录缓存
-                    wx.removeStorageSync("searchHistory");
+                    wx.removeStorageSync("searchHistory")
                 }
-            },
-        });
+            }
+        })
     },
 
     /**
