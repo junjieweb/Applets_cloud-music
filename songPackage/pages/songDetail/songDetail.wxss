@@ -1,4 +1,10 @@
 /* pages/songDetail/songDetail.wxss */
+@import "/static/iconfont/iconfont.wxss";
+
+page {
+    height: 100%;
+}
+
 .songDetailContainer {
     height: 100%;
     background: rgba(0, 0, 0, 0.5);
