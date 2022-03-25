@@ -50,8 +50,13 @@ Page({
     // 跳转到recommendSong页面的回调
     toRecommendSong(){
         wx.navigateTo({
-          url: '/pages/recommendSong/recommendSong',
+          url: '/songPackage/pages/recommendSong/recommendSong',
         })
+    },
+    toOther(){
+        wx.navigateTo({
+            url: '/otherPackage/pages/other/other',
+          })
     },
 
     /**
